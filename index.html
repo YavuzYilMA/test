@@ -34,26 +34,26 @@
             padding: 20px 0;
         }
 
-    
+
         .clock-container {
-    font-family: 'Arial', sans-serif;
-    font-size: 24px;
-    text-align: center;
-    padding: 20px;
-    border: 2px solid #333;
-    border-radius: 10px;
-    width: 200px;
-    margin: px auto;
-    background: linear-gradient(#a619f8, #00f2fe);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    animation: pulse 1s infinite alternate;
-    float: left;
-}
-        
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            width: 200px;
+            margin: px auto;
+            background: linear-gradient(#a619f8, #00f2fe);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            animation: pulse 1s infinite alternate;
+            float: left;
+        }
 
 
 
-        
+
+
 
         .Mäntorstid {
 
@@ -100,13 +100,41 @@
             background-color: #f2f2f2;
         }
 
-        .btn-primary {
+        .bn31 {
+            background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
+            border-radius: 40px;
+            box-sizing: border-box;
+            color: #00a84f;
+            display: block;
+            height: 50px;
+            font-size: 1.4em;
+            padding: 4px;
+            position: relative;
+            text-decoration: none;
+            width: 7em;
+            z-index: 2;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            margin-top: 20px;
+        }
 
-            background: linear-gradient(#a619f8, #00f2fe);
-            padding: 10px;
-            margin: 5px;
-            color: white;
-            border-radius: 6px;
+        .bn31:hover {
+            color: #fff;
+        }
+
+        .bn31 .bn31span {
+            align-items: center;
+            background: #0e0e10;
+            border-radius: 40px;
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            transition: 0.5s ease;
+            width: 100%;
+        }
+
+        .bn31:hover .bn31span {
+            background: transparent;
         }
 
         footer {
@@ -118,31 +146,28 @@
         }
 
         .clock-container {
-    font-family: 'Arial', sans-serif;
-    font-size: 24px;
-    text-align: center;
-    padding: 20px;
-    border: 2px solid #333;
-    border-radius: 10px;
-    width: 200px;
-    margin: 50px auto;
-    background-color: #f0f0f0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    animation: pulse 1s infinite alternate;
-}
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            width: 200px;
+            margin: 50px auto;
+            background-color: #f0f0f0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            animation: pulse 1s infinite alternate;
+        }
 
-@keyframes pulse {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.1);
-    }
-}
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
 
-
-
-
+            to {
+                transform: scale(1.1);
+            }
+        }
     </style>
 </head>
 
@@ -267,11 +292,10 @@
 
 
                 <!-- Diğer bağlantılar -->
-                <a href="https://classroom.google.com/" target="_blank" class="btn-primary"><i class="fas fa-book"></i>
-                    Classroom</a>
-                <a href="https://docs.google.com/spreadsheets/d/1YNXAQF_mGobXkrjHWeJpfN2vgpmmzajeFP-RqC8YIYg/edit?usp=drive_web&authuser=0"
-                    target="_blank" class="btn-primary"><i class="fas fa-book"></i> Provschema </a>
-
+                <a class="bn31"
+                    href="https://docs.google.com/spreadsheets/d/1YNXAQF_mGobXkrjHWeJpfN2vgpmmzajeFP-RqC8YIYg/edit?pli=1#gid=61107754"><span
+                        class="bn31span">Provchema</span></a>
+                <a class="bn31" href="https://classroom.google.com/"><span class="bn31span">classroom</span></a>
 
                 <footer>
                     <div class="container">
@@ -284,26 +308,26 @@
 
 <!-- JavaScript ekledik: -->
 <script>
-function updateClock() {
-    var now = new Date();
-    var saatTarihElementi = document.getElementById('Tid-Datum');
+    function updateClock() {
+        var now = new Date();
+        var saatTarihElementi = document.getElementById('Tid-Datum');
 
-    // Saati ve tarihi güncelle
-    var saat = now.getHours();
-    var dakika = now.getMinutes();
-    var saniye = now.getSeconds();
-    var gun = now.getDate();
-    var ay = now.getMonth() + 1; // JavaScript'te aylar 0'dan başlar
-    var yil = now.getFullYear();
+        // Saati ve tarihi güncelle
+        var saat = now.getHours();
+        var dakika = now.getMinutes();
+        var saniye = now.getSeconds();
+        var gun = now.getDate();
+        var ay = now.getMonth() + 1; // JavaScript'te aylar 0'dan başlar
+        var yil = now.getFullYear();
 
-    saatTarihElementi.innerHTML = 'Clocka: ' + saat + ':' + dakika + ':' + saniye + '<br>Datum: ' + gun + '/' + ay + '/' + yil;
-}
+        saatTarihElementi.innerHTML = 'Clocka: ' + saat + ':' + dakika + ':' + saniye + '<br>Datum: ' + gun + '/' + ay + '/' + yil;
+    }
 
-// Saati belirli aralıklarla güncelle
-setInterval(updateClock, 1000);
+    // Saati belirli aralıklarla güncelle
+    setInterval(updateClock, 1000);
 
-// Sayfa yüklendiğinde saat ve tarihi bir kez güncelle
-window.onload = updateClock;
+    // Sayfa yüklendiğinde saat ve tarihi bir kez güncelle
+    window.onload = updateClock;
 
 </script>
 
